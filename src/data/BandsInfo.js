@@ -14,7 +14,7 @@ const BandsInfo = [
         name:"Change",
         time: '4:30 pm',
         description:'',
-        image:'public/images/change.jpeg',
+        image:'../images/change.jpeg',
         socials: {
             instagram:'https://www.instagram.com/sarratannoubi/'
         } 
