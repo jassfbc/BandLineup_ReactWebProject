@@ -1,9 +1,10 @@
 import BandsInfo from "../data/BandsInfo"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 
 export default function BandPage() {
     const { id } = useParams()
     const band = BandsInfo.find((b) => b.id === id)
+    const navigate = useNavigate();
 
     if (!band){
         return(
@@ -13,6 +14,10 @@ export default function BandPage() {
     else{
         return(
             <div>
+                {/* Back Button */}
+                <button onClick={() => navigate(-1)} style={{ padding: '10px', marginBottom: '20px' }}>
+                    Back to Timeline
+                </button>
                 <h2> {band.name} </h2>
                 <img src={band.image} alt="Band photo" style={{ width: '300px' }}></img>
                 <p>{band.description}</p>
