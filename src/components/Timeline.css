@@ -1,104 +1,41 @@
-.box {
-	flex: 1;
-	align-self: stretch;
+
+
+.timeline-list{
+    margin:-50px auto;
 }
-.contain {
-	display: flex;
-	flex-direction: column;
-	background: #FFFFFF;
+
+.band-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px; /* spacing between time and name */
+    padding: 10px 10px;
+  }
+
+.band-name{
+    text-align: right;
+    margin-left: auto;
+    text-decoration: none;
+    color: inherit;
 }
-.image {
-	width: 197px;
-	height: 116px;
-	margin-top: 21px;
-	margin-bottom: 33px;
-	object-fit: fill;
+
+
+
+.sponso_logos{
+    display: flex;
+    gap: 20px;
+    justify-content:center ;
 }
-.image_line {
-	height: 1px;
-	margin-bottom: 12px;
-	margin-left: 13px;
-	margin-right: 13px;
-	align-self: stretch;
-	object-fit: fill;
-}
-.image3 {
-	width: 48px;
-	height: 48px;
-	margin-right: 60px;
-	object-fit: fill;
-}
-.image4 {
-	width: 40px;
-	height: 57px;
-	object-fit: fill;
-}
-.row-view {
-	align-self: stretch;
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	padding-left: 79px;
-	padding-right: 79px;
-	margin-bottom: 12px;
-}
-.row-view2 {
-	display: flex;
-	align-items: flex-start;
-	margin-bottom: 12px;
-}
-.row-view3 {
-	display: flex;
-	align-items: flex-start;
-	margin-bottom: 32px;
-}
-.sponso_logos {
-	display: flex;
-	align-items: center;
-	margin-bottom: 21px;
-}
-.scroll-view {
-	height: 653px;
-	align-self: stretch;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background: #7C5D72;
-	padding-left: 20px;
-	padding-right: 20px;
-}
-.text {
-	color: #0E0204;
-	font-size: 11px;
-	margin-right: 4px;
-	flex: 1;
-}
-.text2 {
-	color: #0E0204;
-	font-size: 11px;
-	text-align: right;
-	flex: 1;
-}
-.text3 {
-	color: #0E0204;
-	font-size: 11px;
-	margin-right: 113px;
-	width: 39px;
-}
-.text4 {
-	color: #0E0204;
-	font-size: 11px;
-	width: 56px;
-}
-.text5 {
-	color: #0E0204;
-	font-size: 11px;
-	margin-right: 114px;
-	width: 38px;
-}
-.text_title{
-	color: #0E0204;
-	font-size: 24px;
-	font-weight: bold;
-	margin-bottom: 11px;
+
+.sponso_logos img {
+    width: 50px;
+    height: auto;
+    object-fit: contain; /* Makes sure the image fits within bounds */
+  }
+
+h2 {
+
+    font-family: 'Velmorin-bold';
+    color: #A30F2B;
+
 }
