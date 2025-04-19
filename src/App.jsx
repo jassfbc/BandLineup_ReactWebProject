@@ -1,19 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import './App.css'
-import Timeline from './components/Timeline'
-import BandPage from './components/BandPage'
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import BandPage from "@/components/BandPage";
+import Timeline from "@/components/Timeline";
+//import NotFound from "@/components/NotFound";
 
-function App() {
-  return( 
-    <Routes>
-      <Route path="/" element={<Timeline />}></Route>
-      <Route path="/band/:id" element={<BandPage />}></Route>
+const queryClient = new QueryClient();
 
-    </Routes>
-  );
-}
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      {/* <Toaster /> */}
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Timeline />} />
+          <Route path="/band/:id" element={<BandPage />} />
+          {/*<Route path="*" element={<NotFound />} />*/}
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
-export default App
+export default App;

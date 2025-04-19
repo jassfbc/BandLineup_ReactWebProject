@@ -1,68 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Metal+Mania&family=Roboto:wght@300;400;700&display=swap");
+
+/* Update the color variables to match the new image */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --background-color: #0a0000;
+  --primary-color: #c01a2c;
+  --secondary-color: #8a0f1f;
+  --text-color: #ffffff;
+  --accent-color: #2d0a10;
+  --card-bg: #120507;
+  --overlay-color: rgba(10, 0, 0, 0.85);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Add full-screen background image */
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: var(--text-color);
   min-height: 100vh;
+  position: relative;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
 }
 
-button {
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+  z-index: -1;
+}
+
+/* Timeline Styles */
+.timeline-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.jam-session-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+/* Update the title styling to match the white graffiti style in the image */
+.title {
+  font-family: "Metal Mania", cursive;
+  font-size: 4rem;
+  margin: 0;
+  color: var(--text-color);
+  text-shadow: 0 0 10px rgba(192, 26, 44, 0.7);
+  letter-spacing: 2px;
+  transform: skew(-5deg);
+}
+
+/* Update the subtitle styling */
+.subtitle {
+  font-size: 1.5rem;
+  letter-spacing: 8px;
+  margin-top: -0.5rem;
+  color: var(--primary-color);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Update the timeline item styling with more transparency */
+.timeline-item {
+  display: flex;
+  background-color: rgba(18, 5, 7, 0.7);
+  border-left: 4px solid var(--primary-color);
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(3px);
+}
+
+.timeline-item:hover {
+  transform: translateX(5px);
+  background-color: rgba(45, 10, 16, 0.8);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 0%, rgba(224, 30, 30, 0.1) 50%, transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.timeline-item:hover::before {
+  transform: translateX(100%);
+}
+
+.time-slot {
+  min-width: 100px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.band-slot {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Update the band name color to match the image aesthetic */
+.band-name {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--text-color);
+  font-family: "Metal Mania", cursive;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(192, 26, 44, 0.5);
+}
+
+.flame-divider {
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), transparent);
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+/* Band Page Styles */
+.band-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-color);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: var(--primary-color);
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
+
+/* Update card styling with more transparency and blur */
+.band-card {
+  background-color: rgba(18, 5, 7, 0.8);
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  backdrop-filter: blur(5px);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.band-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+}
+
+/* Update the band card styling */
+.band-header {
+  padding: 1.5rem;
+  background-color: rgba(45, 10, 16, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.band-time {
+  background-color: var(--primary-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.band-content {
+  padding: 0;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.band-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(18, 5, 7, 1) 0%, rgba(18, 5, 7, 0) 50%);
+}
+
+.band-description {
+  padding: 1.5rem;
+  line-height: 1.6;
+}
+
+.band-socials {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(192, 26, 44, 0.3);
+}
+
+.band-socials h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Add a subtle glow effect to social links */
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background-color: rgba(192, 26, 44, 0.2);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(192, 26, 44, 0.3);
+}
+
+.social-link:hover {
+  background-color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(192, 26, 44, 0.5);
+}
+
+.social-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.error-container {
+  text-align: center;
+  padding: 3rem;
+  background-color: rgba(18, 5, 7, 0.8);
+  border-radius: 8px;
+  margin-top: 2rem;
+  backdrop-filter: blur(5px);
+}
+
+/* Add a dripping effect to match the graffiti style */
+.jam-session-header::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--primary-color) 50%, transparent 100%);
+}
+
+/* Add some tribal decorative elements to match the image */
+.timeline-container::before,
+.band-page::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../images/tribal-decoration.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.timeline-container::after,
+.band-page::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../images/tribal-decoration.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  opacity: 0.3;
+  z-index: -1;
 }
