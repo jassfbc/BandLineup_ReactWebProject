@@ -1,41 +1,183 @@
-
-
-.timeline-list{
-    margin:-50px auto;
-}
-
-.band-info {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px; /* spacing between time and name */
-    padding: 10px 10px;
+.timeline-container {
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    font-family: "Velmorin-bold", sans-serif;
   }
-
-.band-name{
-    text-align: right;
-    margin-left: auto;
+  
+  .timeline-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .timeline-title,
+  .sponsors-title {
+    font-family: "Velmorin-bold", sans-serif;
+    color: #a30f2b;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  .timeline-bands {
+    position: relative;
+    margin: 3rem 0;
+    padding-left: 2rem;
+  }
+  
+  .timeline-bands::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: #a30f2b;
+  }
+  
+  .band-item {
+    display: block;
+    position: relative;
+    margin-bottom: 2.5rem;
     text-decoration: none;
     color: inherit;
-}
-
-
-
-.sponso_logos{
-    display: flex;
-    gap: 20px;
-    justify-content:center ;
-}
-
-.sponso_logos img {
-    width: 50px;
-    height: auto;
-    object-fit: contain; /* Makes sure the image fits within bounds */
+    transition: transform 0.3s ease;
   }
-
-h2 {
-
-    font-family: 'Velmorin-bold';
-    color: #A30F2B;
-
-}
+  
+  .band-item:hover {
+    transform: translateX(10px);
+  }
+  
+  .time-marker {
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+  }
+  
+  .time-line {
+    width: 15px;
+    height: 2px;
+    background-color: #a30f2b;
+  }
+  
+  .time-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #a30f2b;
+    margin-left: -5px;
+  }
+  
+  .band-card {
+    background-color: rgba(20, 20, 20, 0.7);
+    border-radius: 5px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .band-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background-color: #a30f2b;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+  }
+  
+  .band-card.hovered::before {
+    transform: scaleY(1);
+  }
+  
+  .band-time {
+    display: inline-block;
+    background-color: #a30f2b;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 3px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .band-name {
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  .band-underline {
+    height: 2px;
+    width: 100%;
+    background-color: #a30f2b;
+    margin-top: 0.5rem;
+    transform: scaleX(0.3);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .band-card:hover .band-underline {
+    transform: scaleX(1);
+  }
+  
+  .sponsors-section {
+    margin-top: 4rem;
+    text-align: center;
+  }
+  
+  .sponsor-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .sponsor-logo {
+    display: block;
+    transition: transform 0.3s ease;
+    filter: grayscale(50%);
+  }
+  
+  .sponsor-logo:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+  }
+  
+  .sponsor-logo img {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  @media (max-width: 768px) {
+    .timeline-title,
+    .sponsors-title {
+      font-size: 2rem;
+    }
+  
+    .band-name {
+      font-size: 1.5rem;
+    }
+  
+    .timeline-bands {
+      padding-left: 1.5rem;
+    }
+  
+    .time-marker {
+      left: -1.5rem;
+    }
+  }
+  

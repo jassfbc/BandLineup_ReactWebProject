@@ -1,58 +1,61 @@
-import { Link } from "react-router-dom";
+"use client"
+
+import { Link } from "react-router-dom"
+import { useState } from "react"
 import BandsInfo from "../data/BandsInfo"
-import './Timeline.css'
+import "./Timeline.css"
 
-const sortedBands = [...BandsInfo].sort((a, b) => {
-    const timeA = new Date(`1970-01-01 ${a.time}`);
-    const timeB = new Date(`1970-01-01 ${b.time}`);
-    return timeA - timeB;
-  });
+export default function Timeline() {
+  const sortedBands = [...BandsInfo].sort((a, b) => {
+    const timeA = new Date(`1970-01-01 ${a.time}`)
+    const timeB = new Date(`1970-01-01 ${b.time}`)
+    return timeA - timeB
+  })
 
+  const [hoveredBand, setHoveredBand] = useState(null)
 
-export default function Timeline(){
-    return(
-        <div className="contain">
-            <div className="timeline-list" >
-                
-                <h2>Timeline</h2>
-                <div >
-                    {sortedBands.map((band) => (
-                        <Link className="band-name" to={`/band/${band.id}`}>
-                            <div className="band-info">
-                                <span className="time-info" >
-                                    {band.time}
-                                </span>
-                                <Link className="band-name" to={`/band/${band.id}`}>{band.name}</Link>
-                            </div>
+  return (
+    <div className="timeline-container">
+      <div className="timeline-content">
 
-                            <hr />
-                        </Link>
-                    ))}
+        <div className="timeline-bands">
+          {sortedBands.map((band, index) => (
+            <Link
+              key={band.id}
+              to={`/band/${band.id}`}
+              className="band-item"
+              onMouseEnter={() => setHoveredBand(band.id)}
+              onMouseLeave={() => setHoveredBand(null)}
+            >
+              <div className="time-marker">
+                <div className="time-line"></div>
+                <div className="time-dot"></div>
+              </div>
 
-                </div>
-
-                
-                <div>
-                <h2 className="sponsors-title">Meet Our Sponsors</h2>
-
-                <div className="sponso_logos">
-                    <a href="https://flayes.app/" target="_blank" rel="noopener noreferrer">
-                        <img
-                            src="/images/flayes logo.png"
-                            className="img1"
-                            alt="Flayes logo"
-                        />
-                    </a>
-
-                    <img
-                        src={"https://storage.googleapis.com/tagjs-prod.appspot.com/v1/jKP1lQciWn/3ca4mkk2_expires_30_days.png"} 
-                    />
-                    </div>
-                </div>
-                
-
-            </div>
-            
+              <div className={`band-card ${hoveredBand === band.id ? "hovered" : ""}`}>
+                <span className="band-time">{band.time}</span>
+                <h3 className="band-name">{band.name}</h3>
+                <div className="band-underline"></div>
+              </div>
+            </Link>
+          ))}
         </div>
-    )
+
+        <div className="sponsors-section">
+          <h2 className="sponsors-title">MEET OUR SPONSORS</h2>
+          <div className="sponsor-logos">
+            <a href="https://flayes.app/" target="_blank" rel="noopener noreferrer" className="sponsor-logo">
+              <img src="/images/flayes logo.png" alt="Flayes logo" />
+            </a>
+            <a href="#" className="sponsor-logo">
+              <img
+                src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/jKP1lQciWn/3ca4mkk2_expires_30_days.png"
+                alt="Sponsor logo"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }

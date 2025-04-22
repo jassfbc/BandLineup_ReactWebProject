@@ -7,7 +7,7 @@ import Timeline from './components/Timeline.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/BandLineup_ReactWebProject">
       <App />
     </BrowserRouter>
   </StrictMode>
