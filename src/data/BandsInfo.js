@@ -4,7 +4,7 @@ const BandsInfo = [
         name:"Mid AF",
         time: '7:30 pm',
         description:"Just five guys who started jamming. Nothing too serious, we just play what we like, see where it goes, and have a good time doing it. If you’re into loud guitars and not overthinking things, you’ll probably vibe with us.",
-        image:'../images/Mid AF.png',
+        image:'../images/Mid_AF.png',
         instagram:'https://www.instagram.com/midaf_band/' 
     },
     {
@@ -20,7 +20,7 @@ const BandsInfo = [
         name:'El-Khottaf' , 
         time: '7:00 pm', 
         description: "Progressive-Rock band based in tunisia, \"We've come too far to turn back\". dropping an album soon" , 
-        image: '../images/El Khottaf.png', 
+        image: '../images/El_Khottaf.png', 
         instagram: 'https://www.instagram.com/el.khottaf/',
     }, 
     {
@@ -36,7 +36,7 @@ const BandsInfo = [
         name:'CineRadio Band' , 
         time:'6:00 pm' , 
         description : "CinéRadio Band is the musical soul of CinéRadio Club — a collective of passionate student musicians exploring diverse genres through creativity and collaboration. Formed from the club’s music cell, the band is split into dynamic sub-bands, each with its own style and energy, ranging from rock to jazz to fusion. Together, they bring live sessions, jam nights, and original performances to life on campus, showcasing the rich musical talent within the club.", 
-        image: '../images/cine radio.png', 
+        image: '../images/cine_radio.png', 
         instagram: 'https://www.instagram.com/cineradio_insat/' ,
     }, 
     {
@@ -52,7 +52,7 @@ const BandsInfo = [
         name: 'Rain In Space', 
         time:'4:30 pm' , 
         description : "Rain in Space is a band of talented musicians who let the vibe lead the way. Unpredictable like rain in space, they don’t stick to one genre ,they just play what feels right. Fun, spontaneous, and always in the moment.", 
-        image:'../images/Rain In Space.png' , 
+        image:'../images/Rain_In_Space.png' , 
         instagram:'https://www.instagram.com/chouchane_seif/' ,
     },
     {
@@ -60,7 +60,7 @@ const BandsInfo = [
         name:'Sidi Funk' , 
         time: '5:00 pm', 
         description : "Sidi Funk : Funking up your favorite hits since 2025 (pun intended)", 
-        image:'../images/Sidi Funk.png' , 
+        image:'../images/Sidi_Funk.png' , 
         instagram: 'https://www.instagram.com/sidi_funk/',
     }, 
 
