@@ -31,7 +31,6 @@ export default function Timeline(){
 
                 </div>
 
-
                 
                 <div>
                 <h2 className="sponsors-title">Meet Our Sponsors</h2>
