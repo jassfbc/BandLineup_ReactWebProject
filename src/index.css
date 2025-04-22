@@ -95,7 +95,7 @@ button:focus-visible {
 body {
   margin: 0;
   padding: 0;
-  background-image: url('public/images/Backcground.png');
+  background-image: url('/images/Backcground.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
