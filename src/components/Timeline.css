@@ -1,0 +1,49 @@
+
+
+.timeline-list{
+    margin:-50px auto;
+}
+
+.band-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px; /* spacing between time and name */
+    padding: 10px 10px;
+  }
+
+.band-name{
+    text-align: right;
+    margin-left: auto;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+.sponso_logos{
+    display: flex;
+    gap: 20px;
+    justify-content:center ;
+}
+
+.sponso_logos img {
+    width: 50px;
+    height: auto;
+    object-fit: contain; /* Makes sure the image fits within bounds */
+  }
+
+h2 {
+
+    font-family: 'Velmorin-bold';
+    color: #A30F2B;
+
+}
+
+Link{
+    font-size: medium;
+}
+
+
+
+
