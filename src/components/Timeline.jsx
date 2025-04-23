@@ -44,15 +44,17 @@ export default function Timeline() {
         <div className="sponsors-section">
           <h2 className="sponsors-title">MEET OUR SPONSORS</h2>
           <div className="sponsor-logos">
+          <a href="https://www.instagram.com/pixel_service_hosni/" target="_blank" rel="noopener noreferrer" className="sponsor-logo">
+              <img src="/images/pixel_print.png" alt="Pixel Print Logo" />
+            </a>
+            
+            <a href="https://digitalirisprod.com/" target="_blank" rel="noopener noreferrer" className="sponsor-logo">
+              <img src="/images/digital_iris.png" alt="Digital Iris logo" />
+            </a>
             <a href="https://flayes.app/" target="_blank" rel="noopener noreferrer" className="sponsor-logo">
-              <img src="/images/flayes logo.png" alt="Flayes logo" />
+              <img src="/images/flayes.png" alt="Flayes Logo" />
             </a>
-            <a href="#" className="sponsor-logo">
-              <img
-                src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/jKP1lQciWn/3ca4mkk2_expires_30_days.png"
-                alt="Sponsor logo"
-              />
-            </a>
+            
           </div>
         </div>
       </div>
